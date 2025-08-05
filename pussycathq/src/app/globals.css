@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* This is the key line for Tailwind v4 dark mode */
+@variant dark (&:is(.dark *));
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --default-theme: dark;
+  }
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+}
