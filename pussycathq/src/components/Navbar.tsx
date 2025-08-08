@@ -128,7 +128,7 @@ const Navbar: FC = () => {
             Trading
           </a>
           <a href="/testimonies" onClick={handleLinkClick} className="font-medium hover:text-blue-600 dark:hover:text-gray-300 transition-colors">
-            Testimonies
+            Meow
           </a>
         </div>
 
@@ -167,7 +167,7 @@ const Navbar: FC = () => {
       
       {/* Mobile Menu (collapsible) */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-black pb-4 px-4">
+        <div className="lg:hidden bg-orange-400 dark:bg-black pb-4 px-4">
             <nav className="flex flex-col space-y-4">
                 <a href="/airdrops" onClick={handleLinkClick} className="font-medium hover:text-blue-600 dark:hover:text-gray-300 transition-colors block text-center py-2">
                     Airdrops

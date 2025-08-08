@@ -23,7 +23,7 @@ const Hero = () => {
 
                 {/* Example 2: Customized speed and characters */}
                 <DecryptedText
-                text="Buidl."
+                text="Meow meow "
                 speed={50}
                 maxIterations={20}
                 className="revealed"
@@ -36,7 +36,7 @@ const Hero = () => {
 
                 {/* Example 2: Customized speed and characters */}
                 <DecryptedText
-                text="Connect."
+                text="Meow"
                 speed={50}
                 maxIterations={20}
                 className="revealed"
@@ -51,7 +51,7 @@ const Hero = () => {
 
                 {/* Example 2: Customized speed and characters */}
                 <DecryptedText
-                text="Repeat."
+                text="Meoowwwww."
                 speed={50}
                 maxIterations={20}
                 className="revealed"
