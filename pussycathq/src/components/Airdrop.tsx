@@ -152,10 +152,14 @@ const Airdrop = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-orange-400 dark:bg-black">
       {/* Main Content */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 space-y-6 min-h-screen">
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 min-h-screen">
           
+          <div className="flex flex-col items-center space-y-8 max-w-4xl w-full">
+
+            <div> <h2 className="text-2xl font-bold">Airdrop Projects</h2> </div>
+
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-6">
+          <div className="flex flex-wrap justify-center gap-3">
             {filterButtons.map((button) => (
               <button
                 key={button.key}
@@ -175,7 +179,7 @@ const Airdrop = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="flex-1 w-full max-w-4xl overflow-auto">
+          <div className="flex-1 w-full max-w-4xl overflow-auto items-center justify-center">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
               {filteredProjects.map((project) => (
                 <StarBorder
@@ -207,6 +211,7 @@ const Airdrop = () => {
               ))}
             </div>
           </div>
+        </div>
         </div>
 
         {/* Curved Loop Overlay */}
