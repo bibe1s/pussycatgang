@@ -116,18 +116,19 @@ const Navbar: FC = () => {
                 className="revealed"
                 parentClassName="all-letters"
                 encryptedClassName="encrypted"
+                animateOn="view"
                 /></span>
         </a>
 
         {/* Center Section: Navigation Links (Desktop) */}
         <div className="hidden lg:flex items-center space-x-24">
-          <a href="/airdrops" onClick={handleLinkClick} className="font-medium hover:text-blue-600 dark:hover:text-gray-300 transition-colors">
+          <a href="/airdrops" onClick={handleLinkClick} className="font-medium hover:text-white dark:hover:text-orange-400 transition-colors">
             Airdrops
           </a>
-          <a href="/trading" onClick={handleLinkClick} className="font-medium hover:text-blue-600 dark:hover:text-gray-300 transition-colors">
+          <a href="/trading" onClick={handleLinkClick} className="font-medium hover:text-white dark:hover:text-orange-400 transition-colors">
             Trading
           </a>
-          <a href="/testimonies" onClick={handleLinkClick} className="font-medium hover:text-blue-600 dark:hover:text-gray-300 transition-colors">
+          <a href="/testimonies" onClick={handleLinkClick} className="font-medium hover:text-white dark:hover:text-orange-400 transition-colors">
             Meow
           </a>
         </div>
@@ -137,14 +138,14 @@ const Navbar: FC = () => {
           <a
             href="/community"
             onClick={handleLinkClick}
-            className="border border-black dark:border-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+            className="border border-black dark:border-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-black hover:text-white dark:hover:bg-orange-400 dark:hover:text-black transition-all duration-300"
           >
             Join Our Community
           </a>
           <button 
             onClick={toggleTheme} 
             aria-label="Toggle theme" 
-            className="hover:text-blue-600 dark:hover:text-gray-300 p-2 rounded-full"
+            className="hover:text-white dark:hover:text-orange-400 p-2 rounded-full"
           >
             {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
           </button>

@@ -5,6 +5,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Airdrop from '@/components/Airdrop';
+import Trading from '@/components/Trading';
 import LetterGlitch from '@/components/LetterGlitch';
 
 // Main Home page component
@@ -20,7 +21,7 @@ export default function Home() {
 
       <Airdrop />
       
-      
+      <Trading />
       {/* Future sections will be added here */}
     </main>
   );

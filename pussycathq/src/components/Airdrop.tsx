@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import LetterGlitch from './LetterGlitch';
-import CurvedLoop from './CurvedLoop';
+import Silk from './Silk';
 
 // StarBorder Component
 type StarBorderProps<T extends React.ElementType> =
@@ -150,13 +149,42 @@ const Airdrop = () => {
   ];
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-orange-400 dark:bg-black">
-      {/* Main Content */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-6 min-h-screen">
-          
-          <div className="flex flex-col items-center space-y-8 max-w-4xl w-full">
+    <section className="relative min-h-screen flex flex-col overflow-hidden bg-black dark:bg-orange-400">
 
-            <div> <h2 className="text-2xl font-bold">Airdrop Projects</h2> </div>
+{/* Silk Background - Behind everything */}
+<div className="absolute inset-0 z-0 bg-black pointer-events-none">
+
+    <Silk
+  speed={20}
+  scale={2}
+  color="#FB923C"
+  noiseIntensity={1.5}
+  rotation={0}
+      />
+
+</div>
+
+      {/* Header - Orange Header with Diamond Line */}
+      <div 
+        className="w-full h-6 bg-orange-400 dark:bg-black flex justify-center items-center relative z-30 flex-shrink-0"
+        style={{
+          borderRadius: '0 0 40px 40px'
+        }}
+      >
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
+          <div className="w-20 h-1 bg-black dark:bg-orange-400"></div>
+          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
+        </div>
+      </div>
+      
+      {/* Main Content - Takes up remaining space */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center p-6">
+        <div className="flex flex-col items-center space-y-8 max-w-4xl w-full border border-gray-700/50 bg-gray-900/50 rounded-lg p-6 shadow-lg min-h-[600px]">
+
+          <div> 
+            <h2 className="text-3xl font-bold text-white">Airdrop Projects</h2> 
+          </div>
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3">
@@ -178,41 +206,52 @@ const Airdrop = () => {
             ))}
           </div>
 
-          {/* Projects Grid */}
-          <div className="flex-1 w-full max-w-4xl overflow-auto items-center justify-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-              {filteredProjects.map((project) => (
-                <StarBorder
-                  key={project.id}
-                  className={`${project.bgColor} min-h-[120px] cursor-pointer transition-all duration-300 hover:scale-105`}
-                  color={isDarkMode ? "#FF6B35" : "#1E40AF"}
-                  speed="4s"
-                  thickness={2}
-                >
-                  <div className="relative group flex flex-col items-center justify-center text-center space-y-3 h-full p-4">
-                    {/* Project Logo */}
-                    <div className="text-3xl sm:text-4xl transform group-hover:scale-110 transition-transform duration-300">
-                      {project.logo}
-                    </div>
-                    
-                    {/* Project Name */}
-                    <h3 className="text-white font-bold text-sm sm:text-base leading-tight">
-                      {project.name}
-                    </h3>
+{/* Projects Grid */}
+        <div className="flex-1 w-full max-w-4xl overflow-auto items-center justify-center">
+        <div className="grid gap-4 p-4"
+            style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+          {filteredProjects.map((project) => (
+            <StarBorder
+              key={project.id}
+              className={`${project.bgColor} min-h-[120px] cursor-pointer transition-all duration-300 hover:scale-105`}
+              color={isDarkMode ? "#FF6B35" : "#1E40AF"}
+              speed="4s"
+              thickness={2}
+            >
+              <div className="relative group flex flex-col items-center justify-center text-center space-y-3 h-full p-4">
+                <div className="text-3xl sm:text-4xl transform group-hover:scale-110 transition-transform duration-300">
+                  {project.logo}
+                </div>
+                <h3 className="text-white font-bold text-sm sm:text-base leading-tight">
+                  {project.name}
+                </h3>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                    {project.category === 'topChoice' ? 'Top' : project.category}
+                  </span>
+                </div>
+              </div>
+            </StarBorder>
+          ))}
+        </div>
+        </div>
 
-                    {/* Category Badge */}
-                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-black/50 text-white text-xs px-2 py-1 rounded-full">
-                        {project.category === 'topChoice' ? 'Top' : project.category}
-                      </span>
-                    </div>
-                  </div>
-                </StarBorder>
-              ))}
-            </div>
-          </div>
         </div>
+      </div>
+
+      {/* Footer - Orange Footer with Diamond Line */}
+      <div 
+        className="w-full h-6 bg-orange-400 dark:bg-black flex justify-center items-center relative z-30 flex-shrink-0"
+        style={{
+          borderRadius: '40px 40px 0 0'
+        }}
+      >
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
+          <div className="w-20 h-1 bg-black dark:bg-orange-400"></div>
+          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
         </div>
+      </div>
 
         {/* Curved Loop Overlay */}
         {/* <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
@@ -225,7 +264,7 @@ const Airdrop = () => {
             className="text-white text-2xl sm:text-2xl font-bold tracking-widest"
           />
         </div> */}
-      </section>
+    </section>
   );
 };
 
