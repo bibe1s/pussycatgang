@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import Airdrop from '@/components/Airdrop';
 import Trading from '@/components/Trading';
 import LetterGlitch from '@/components/LetterGlitch';
+import Meow from '@/components/Meow';
 
 // Main Home page component
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Airdrop />
       
       <Trading />
+      <Meow />
       {/* Future sections will be added here */}
     </main>
   );
