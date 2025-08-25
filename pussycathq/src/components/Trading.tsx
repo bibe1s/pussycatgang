@@ -113,36 +113,10 @@ const Trading = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
 
-      {/* Hero Section */}
-      <div className="relative z-10 pt-20 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Learn
-              </span>
-              <br />
-              <span className="text-gray-700 dark:text-gray-300">Trading</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
-              Master the art of trading with proven techniques and expert guidance. 
-              From Elliott Wave to ICT methodology, unlock your trading potential.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Start Learning
-              </button>
-              <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-orange-500 hover:text-orange-500 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
-                Meet Our Teachers
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Trading Techniques Tabs */}
-      <div className="relative z-10 py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+      <div className="relative z-10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
             Learn Trading Techniques
@@ -182,7 +156,7 @@ const Trading = () => {
                   <div className="space-y-4">
                     {selectedTechnique.features.map((feature, index) => (
                       <div key={index} className="flex items-center">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-orange-400 rounded-full mr-3"></div>
                         <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -210,7 +184,7 @@ const Trading = () => {
       <div className="relative z-10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
-            Learn from Expert Traders
+            Learn from Experience Traders
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -261,7 +235,7 @@ const Trading = () => {
       </div>
 
       {/* Learning Path Section */}
-      <div className="relative z-10 py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
+      <div className="relative z-10 py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
             Your Learning Journey

@@ -93,7 +93,7 @@ const Navbar: FC = () => {
   };
 
   return (
-    <header className="bg-orange-400 dark:bg-black text-gray-800 dark:text-white shadow-md transition-colors duration-300">
+    <header className="sticky top-0 z-50 bg-orange-400 dark:bg-black text-gray-800 dark:text-white shadow-md transition-colors duration-300">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Left Section: Logo with SVG */}
         <a href="/" onClick={handleLinkClick} className="flex items-center space-x-3">
@@ -129,7 +129,7 @@ const Navbar: FC = () => {
             Trading
           </a>
           <a href="/testimonies" onClick={handleLinkClick} className="font-medium hover:text-white dark:hover:text-orange-400 transition-colors">
-            Meow
+            Proof of Work
           </a>
         </div>
 

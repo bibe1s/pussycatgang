@@ -56,3 +56,14 @@
 .animate-marquee {
   animation: marquee 25s linear infinite;
 }
+
+/* Airdrop component: Show desktop-side image only when viewport is at least 1666x772 */
+.airdrop-desktop-image {
+  display: none;
+}
+
+@media (min-width: 1700px) {
+  .airdrop-desktop-image {
+    display: block;
+  }
+}

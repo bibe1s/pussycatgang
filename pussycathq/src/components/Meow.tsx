@@ -17,7 +17,6 @@ const Meow = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       
 
-
       {/* MAIN CONTENT CONTAINER */}
       <div className="relative z-10 text-center">
         

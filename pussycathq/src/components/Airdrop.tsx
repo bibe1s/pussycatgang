@@ -1,56 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Silk from './Silk';
-
-// StarBorder Component
-type StarBorderProps<T extends React.ElementType> =
-  React.ComponentPropsWithoutRef<T> & {
-    as?: T;
-    className?: string;
-    children?: React.ReactNode;
-    color?: string;
-    speed?: React.CSSProperties['animationDuration'];
-    thickness?: number;
-  }
-
-const StarBorder = <T extends React.ElementType = "div">({
-  as,
-  className = "",
-  color = "white",
-  speed = "6s",
-  thickness = 1,
-  children,
-  ...rest
-}: StarBorderProps<T>) => {
-  const Component = as || "div";
-  return (
-    <Component 
-      className={`relative inline-block overflow-hidden rounded-[20px] ${className}`} 
-      {...(rest as any)}
-      style={{
-        padding: `${thickness}px 0`,
-        ...(rest as any).style,
-      }}
-    >
-      <div
-        className="absolute w-[300%] h-[50%] opacity-70 bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
-        style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
-          animationDuration: speed,
-        }}
-      ></div>
-      <div
-        className="absolute w-[300%] h-[50%] opacity-70 top-[-10px] left-[-250%] rounded-full animate-star-movement-top z-0"
-        style={{
-          background: `radial-gradient(circle, ${color}, transparent 10%)`,
-          animationDuration: speed,
-        }}
-      ></div>
-      <div className="relative z-1 border border-gray-600/30 text-white text-center rounded-[20px] h-full">
-        {children}
-      </div>
-    </Component>
-  );
-};
+import CurvedLoop from './CurvedLoop';
+import Image from 'next/image';
+import puchicat2 from '../assets/images/puchicat2.svg';
+import puchicat1 from '../assets/images/puchicat1.svg';
 
 // Sample project data
 const projects = [
@@ -149,34 +101,20 @@ const Airdrop = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-black dark:bg-orange-400">
+    <section className="relative min-h-screen flex flex-col overflow-visible bg-orange-400 dark:bg-black pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24">
 
-{/* Silk Background - Behind everything */}
-<div className="absolute inset-0 z-0 bg-black pointer-events-none">
-
-    <Silk
-  speed={20}
-  scale={2}
-  color="#FB923C"
-  noiseIntensity={1.5}
-  rotation={0}
-      />
-
-</div>
-
-      {/* Header - Orange Header with Diamond Line */}
-      <div 
-        className="w-full h-6 bg-orange-400 dark:bg-black flex justify-center items-center relative z-30 flex-shrink-0"
-        style={{
-          borderRadius: '0 0 40px 40px'
-        }}
-      >
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
-          <div className="w-20 h-1 bg-black dark:bg-orange-400"></div>
-          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
-        </div>
+      {/* Curved Loop Top Overlay */}
+      <div className="absolute inset-x-0 top-0 lg:top-7 pointer-events-none z-30 flex items-center justify-center pt-14 sm:pt-16 md:pt-20">
+        <CurvedLoop 
+          marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
+          speed={0.25}
+          curveAmount={0}
+          direction="left"
+          interactive={true}
+          className="text-white text-[180px] font-extrabold tracking-widest"
+        />
       </div>
+      
       
       {/* Main Content - Takes up remaining space */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center p-6">
@@ -211,12 +149,9 @@ const Airdrop = () => {
         <div className="grid gap-4 p-4"
             style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
           {filteredProjects.map((project) => (
-            <StarBorder
+            <div
               key={project.id}
-              className={`${project.bgColor} min-h-[120px] cursor-pointer transition-all duration-300 hover:scale-105`}
-              color={isDarkMode ? "#FF6B35" : "#1E40AF"}
-              speed="4s"
-              thickness={2}
+              className={`relative overflow-hidden rounded-[20px] border border-gray-600/30 text-white text-center h-full ${project.bgColor} min-h-[120px] cursor-pointer transition-all duration-300 hover:scale-105`}
             >
               <div className="relative group flex flex-col items-center justify-center text-center space-y-3 h-full p-4">
                 <div className="text-3xl sm:text-4xl transform group-hover:scale-110 transition-transform duration-300">
@@ -231,7 +166,7 @@ const Airdrop = () => {
                   </span>
                 </div>
               </div>
-            </StarBorder>
+            </div>
           ))}
         </div>
         </div>
@@ -239,31 +174,41 @@ const Airdrop = () => {
         </div>
       </div>
 
-      {/* Footer - Orange Footer with Diamond Line */}
-      <div 
-        className="w-full h-6 bg-orange-400 dark:bg-black flex justify-center items-center relative z-30 flex-shrink-0"
-        style={{
-          borderRadius: '40px 40px 0 0'
-        }}
-      >
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
-          <div className="w-20 h-1 bg-black dark:bg-orange-400"></div>
-          <div className="w-3 h-3 bg-black dark:bg-orange-400 rounded-full"></div>
-        </div>
+      {/* Curved Loop Bottom Overlay */}
+      <div className="absolute inset-x-0 bottom-0 pointer-events-none z-20 flex items-center justify-center">
+        <CurvedLoop 
+          marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
+          speed={0.25}
+          curveAmount={0}
+          direction="right"
+          interactive={true}
+          className="text-white text-[180px] font-extrabold tracking-widest"
+        />
       </div>
 
-        {/* Curved Loop Overlay */}
-        {/* <div className="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
-          <CurvedLoop 
-            marqueeText="MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW"
-            speed={2}
-            curveAmount={500}
-            direction="right"
-            interactive={true}
-            className="text-white text-2xl sm:text-2xl font-bold tracking-widest"
-          />
-        </div> */}
+             {/* Left-side decorative image (desktop only) */}
+       <div className="pointer-events-none absolute left-12 top-1/2 -translate-y-1/2 z-10 airdrop-desktop-image">
+         <Image
+           src={puchicat1}
+           alt="puchicat1"
+           width={360}
+           height={360}
+           className="opacity-90 drop-shadow-xl"
+           priority={false}
+         />
+       </div>
+
+       {/* Right-side decorative image (desktop only) */}
+       <div className="pointer-events-none absolute right-12 top-1/2 -translate-y-1/2 z-10 airdrop-desktop-image">
+         <Image
+           src={puchicat2}
+           alt="puchicat2"
+           width={360}
+           height={360}
+           className="opacity-90 drop-shadow-xl"
+           priority={false}
+         />
+       </div>
     </section>
   );
 };
