@@ -6,20 +6,20 @@ import Hero from '@/components/Hero';
 import Airdrop from '@/components/Airdrop';
 import Trading from '@/components/Trading';
 import LetterGlitch from '@/components/LetterGlitch';
-import Meow from '@/components/Meow';
+import ProofofWork from '@/components/ProofofWork';
 
 // Main Home page component
 export default function Home() {
   return (
     // Main container with full screen height and theme-aware styling
-    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
+    <main className="min-h-screen text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero section - responsive and theme-aware */}
       <Hero />
 
       <Airdrop />
       
       <Trading />
-      <Meow />
+      <ProofofWork />
       {/* Future sections will be added here */}
     </main>
   );

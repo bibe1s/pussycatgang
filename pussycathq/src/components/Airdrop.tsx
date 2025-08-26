@@ -107,7 +107,7 @@ const Airdrop = () => {
       <div className="absolute inset-x-0 top-0 lg:top-7 pointer-events-none z-30 flex items-center justify-center pt-14 sm:pt-16 md:pt-20">
         <CurvedLoop 
           marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
-          speed={0.25}
+          speed={0.35}
           curveAmount={0}
           direction="left"
           interactive={true}
@@ -178,7 +178,7 @@ const Airdrop = () => {
       <div className="absolute inset-x-0 bottom-0 pointer-events-none z-20 flex items-center justify-center">
         <CurvedLoop 
           marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
-          speed={0.25}
+          speed={1}
           curveAmount={0}
           direction="right"
           interactive={true}
