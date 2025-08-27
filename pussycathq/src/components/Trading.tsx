@@ -5,6 +5,7 @@ import frenzy from '../assets/images/frenzy.svg';
 import eyszi from '../assets/images/eyszi.svg';
 import potato from '../assets/images/potato.svg';
 import yosh from '../assets/images/yosh.svg';
+import ProfileCard from './ProfileCard'
 
 import ElectricBorder from './ElectricBorder'; // Import the ElectricBorder component
 
@@ -148,6 +149,7 @@ const Trading = () => {
           
           {/* Technique Tabs with Electric Border on Active Tab */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
+
             {tradingTechniques.map((technique) => (
               <div key={technique.id}>
                 {activeTab === technique.id ? (
@@ -235,6 +237,8 @@ const Trading = () => {
               </div>
             </ElectricBorder>
           )}
+
+          
         </div>
       </div>
 
@@ -442,6 +446,7 @@ const Trading = () => {
               
               {/* Duplicate set for seamless loop */}
               <div className="flex space-x-8 min-w-max">
+
                 {[
                   { emoji: '', name: '', color: 'from-blue-500 to-cyan-500' },
                   { emoji: '', name: '', color: 'from-purple-500 to-pink-500' },

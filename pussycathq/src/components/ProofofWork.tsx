@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import ProfileCard from './ProfileCard'
+import jrsolis from '../assets/images/jrsolis1.png';
 
 const Meow = () => {
   const handleXClick = () => {
@@ -42,43 +44,18 @@ const Meow = () => {
           className="relative w-80 h-80 md:w-96 md:h-96 mx-auto cursor-pointer group transition-all duration-300 transform hover:scale-105"
         >
           
-          {/* MAIN PICTURE FRAME: This is where you'll put your community image */}
-          {/* CURRENTLY: Orange-to-red gradient background with WHITE BORDER */}
-          <div className="w-full h-full bg-gradient-to-br from-orange-200 to-red-200 dark:from-orange-800 dark:to-red-800 rounded-2xl shadow-2xl border-4 border-white dark:border-gray-700 flex items-center justify-center overflow-hidden">
-            
-            {/* PLACEHOLDER CONTENT: Cat emoji and text (replace with your image) */}
-            <div className="text-center p-6">
-              {/* Cat emoji */}
-              <div className="text-6xl mb-4">🐱</div>
-              {/* PCG Community text */}
-              <p className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
-                PCG Community
-              </p>
-              {/* Click instruction text */}
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Click to join us on X
-              </p>
-            </div>
-          </div>
-          
-          {/* HOVER OVERLAY: Appears when hovering over the picture */}
-          <div className="absolute inset-0 bg-black/20 dark:bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="text-center text-white dark:text-black">
-              {/* Bird emoji for X */}
-              <div className="text-4xl mb-2">🐦</div>
-              <p className="font-bold text-lg">Follow on X</p>
-              <p className="text-sm">Click to visit our profile</p>
-            </div>
-          </div>
-          
-          {/* X ICON BADGE: Small circular badge in top-right corner of picture */}
-          {/* WHITE CIRCULAR BACKGROUND: This is the white circle you asked about */}
-          <div className="absolute top-4 right-4 bg-black dark:bg-white text-white dark:text-black w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-            {/* X (Twitter) icon */}
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </div>
+<ProfileCard
+  name="JR SOLIS"
+  title="Batak pa"
+  handle="javicodes"
+  status="Online"
+  contactText="Contact Me"
+  avatarUrl={jrsolis}
+  showUserInfo={true}
+  enableTilt={true}
+  enableMobileTilt={false}
+  onContactClick={() => console.log('Contact clicked')}
+/>
         </div>
 
         {/* ADDITIONAL INFO SECTION: Below the picture */}
