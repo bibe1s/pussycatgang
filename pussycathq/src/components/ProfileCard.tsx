@@ -65,10 +65,10 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
   miniAvatarUrl,
-  name = "Javi A. Torres",
+  name = "<Name>",
   title = "Software Engineer",
-  handle = "javicodes",
-  status = "Online",
+  handle = "FriedProtatoes",
+  status = "fcked Up",
   contactText = "Contact",
   showUserInfo = true,
   onContactClick,
@@ -539,8 +539,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
             />
             
             {showUserInfo && (
-              <div className="pc-user-info absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between bg-white/10 backdrop-blur-[30px] border border-white/10 rounded-2xl p-3 px-3.5 pointer-events-auto">
-                <div className="pc-user-details flex items-center gap-3">
+              <div className="pc-user-info absolute bottom-5 left-5 right-5 z-20 bg-white/10 backdrop-blur-[30px] border border-white/10 rounded-2xl p-4 pointer-events-auto min-h-[80px]">
+                <div className="flex items-center gap-2">
+                <div className="pc-user-details" style={{ display: 'flex', alignItems: 'center', flex: '1', minWidth: '0' }}>
                   <div className="pc-mini-avatar w-12 h-12 rounded-full overflow-hidden border border-white/10 flex-shrink-0">
                     <img
                       src={miniAvatarUrl || avatarUrl}
@@ -554,20 +555,23 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       }}
                     />
                   </div>
-                  <div className="pc-user-text flex items-start flex-col gap-1.5">
-                    <div className="pc-handle text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                    <div className="pc-status text-sm text-white/70 leading-none">{status}</div>
+                  <div className="pc-user-text" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '2px', flex: '1', minWidth: '0', marginLeft: '8px' }}>
+                    <div className="pc-handle text-sm font-medium text-white/90 leading-tight truncate">@{handle}</div>
+                    <div className="pc-status text-sm text-white/70 leading-tight truncate">{status}</div>
                   </div>
                 </div>
-                <button
-                  className="pc-contact-btn border border-white/10 rounded-lg px-4 py-2 text-sm font-semibold text-white/90 cursor-pointer transition-all duration-200 ease-out backdrop-blur-sm hover:border-white/40 hover:-translate-y-0.5"
-                  onClick={handleContactClick}
-                  style={{ pointerEvents: "auto" }}
-                  type="button"
-                  aria-label={`Contact ${name || "user"}`}
-                >
-                  {contactText}
-                </button>
+                  <div className="flex justify-end ml-auto">
+                    <button
+                      className="pc-contact-btn border border-white/10 rounded-lg px-4 py-2 text-sm font-semibold text-white/90 cursor-pointer transition-all duration-200 ease-out backdrop-blur-sm hover:border-white/40 hover:-translate-y-0.5 flex-shrink-0"
+                      onClick={handleContactClick}
+                      style={{ pointerEvents: "auto" }}
+                      type="button"
+                      aria-label={`Contact ${name || "user"}`}
+                    >
+                      {contactText}
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -587,7 +591,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 {name}
               </h3>
               <p 
-                className="font-semibold relative -top-3 whitespace-nowrap text-base m-0 mx-auto w-min text-transparent bg-clip-text"
+                className="font-semibold relative -top-3 whitespace-nowrap text-base m-0 text-transparent bg-clip-text z-30"
                 style={{
                   backgroundImage: "linear-gradient(to bottom, #fff, #4a4ac0)",
                   backgroundSize: "1em 1.5em",
