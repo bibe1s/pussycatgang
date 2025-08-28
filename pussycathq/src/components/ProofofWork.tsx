@@ -3,92 +3,126 @@ import React from 'react';
 import Image from 'next/image';
 import ProfileCard from './ProfileCard'
 import jrsolis from '../assets/images/jrsolis1.png';
+import potato from '../assets/images/potato.svg';
 
-const Meow = () => {
+const ProofofWork = () => {
   const handleXClick = () => {
-    // Replace this with your actual X (Twitter) profile URL
     window.open('https://x.com/yourusername', '_blank');
   };
 
+  const heartPattern = [
+    [0, 1, 1, 0, 0, 1, 1, 0],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 1, 1, 1, 0],
+    [0, 0, 1, 1, 1, 1, 0, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0]
+  ];
+
+  const memberPlaceholders = Array.from({ length: 24 }, (_, index) => ({
+    id: index + 1,
+    name: `Member ${index + 1}`,
+    title: `Role ${index + 1}`,
+    handle: `member${index + 1}`,
+    status: Math.random() > 0.5 ? "Online" : "Offline",
+    avatarUrl: jrsolis
+  }));
+
+  // Map: put potato at pixel index 10
+  const specialImageMap: Record<number, any> = {
+    10: potato,
+  };
+
   return (
-    // MAIN SECTION: Full screen with orange background (light mode) and black (dark mode)
-    <section className="relative min-h-screen bg-orange-400 dark:bg-black overflow-hidden flex items-center justify-center">
-      
-      {/* BACKGROUND DECORATIVE ELEMENTS */}
-      {/* Grid pattern overlay with low opacity */}
+    <section className="relative min-h-screen bg-orange-400 dark:bg-black overflow-hidden flex items-center justify-center px-4 md:px-8">
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      
-
-      {/* MAIN CONTENT CONTAINER */}
-      <div className="relative z-10 text-center">
+      <div className="relative z-10 w-full max-w-7xl">
         
-        {/* HEADING: PCG Community title */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-8">
-          {/* PCG text with orange-to-red gradient */}
-          <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-            PCG
-          </span>
-          <br />
-          {/* Community text in dark gray (light mode) and light gray (dark mode) */}
-          <span className="text-gray-700 dark:text-gray-300">Community</span>
-        </h1>
-        
-        {/* SUBTITLE: Description text */}
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
-          Join our amazing community of traders and enthusiasts
-        </p>
-
-        {/* CLICKABLE COMMUNITY PICTURE CONTAINER */}
-        <div 
-          onClick={handleXClick}
-          className="relative w-80 h-80 md:w-96 md:h-96 mx-auto cursor-pointer group transition-all duration-300 transform hover:scale-105"
-        >
-          
-<ProfileCard
-  name="JR SOLIS"
-  title="Batak pa"
-  handle="javicodes"
-  status="Online"
-  contactText="Contact Me"
-  avatarUrl={jrsolis}
-  showUserInfo={true}
-  enableTilt={true}
-  enableMobileTilt={false}
-  onContactClick={() => console.log('Contact clicked')}
-/>
+        {/* HEADING */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-8">
+            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+              PCG
+            </span>
+            <br />
+            <span className="text-gray-700 dark:text-gray-300">Community</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
+            Join our amazing community of traders and enthusiasts
+          </p>
         </div>
 
-        {/* ADDITIONAL INFO SECTION: Below the picture */}
-        <div className="mt-12 text-center">
-          {/* Description text */}
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-            Stay connected with the latest updates, trading insights, and community events
-          </p>
+        {/* MAIN CONTENT */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 mb-12">
           
-          {/* BUTTONS CONTAINER */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            
-            {/* FOLLOW ON X BUTTON: Black background (light mode), white background (dark mode) */}
-            <button 
-              onClick={handleXClick}
-              className="bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-3"
-            >
-              {/* X icon */}
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-              Follow on X
-            </button>
-            
-            {/* LEARN MORE BUTTON: Transparent with black border (light mode), white text (dark mode) */}
-            <button className="border-2 border-black hover:border-gray-600 dark:text-white dark:hover:border-gray-300 text-black hover:text-gray-600 dark:hover:text-gray-300 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 bg-transparent hover:bg-black/10 dark:hover:bg-white/10">
-              Learn More
-            </button>
+          {/* PROFILE CARD */}
+          <div 
+            onClick={handleXClick}
+            className="cursor-pointer group transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+          >
+            <ProfileCard
+              name="JR SOLIS"
+              title="Batak pa"
+              handle="javicodes"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl={jrsolis}
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => console.log('Contact clicked')}
+            />
           </div>
+
+          {/* PIXEL HEART */}
+          <div className="flex items-center justify-center">
+            <div className="grid grid-cols-8 gap-2 sm:gap-3 md:gap-4">
+              {heartPattern.flatMap((row, rowIndex) =>
+                row.map((pixel, colIndex) => {
+                  const pixelIndex = rowIndex * 8 + colIndex;
+                  if (pixel === 0) {
+                    return (
+                      <div
+                        key={pixelIndex}
+                        className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20"
+                      />
+                    );
+                  }
+
+                  const imageSrc = specialImageMap[pixelIndex] || memberPlaceholders[pixelIndex % memberPlaceholders.length].avatarUrl;
+
+                  return (
+                    <div
+                      key={pixelIndex}
+                      className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20
+                                 rounded-sm shadow-lg hover:shadow-xl transition-all duration-300 
+                                 transform hover:scale-110 cursor-pointer border-2 border-gray-400 
+                                 dark:border-gray-500 hover:border-blue-500 dark:hover:border-blue-400 
+                                 overflow-hidden"
+                      onClick={() => console.log('Member clicked:', memberPlaceholders[pixelIndex % memberPlaceholders.length].name)}
+                    >
+                      <Image
+                        src={imageSrc}
+                        alt={memberPlaceholders[pixelIndex % memberPlaceholders.length].name}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center">
+          {/* Add description or CTA here */}
         </div>
       </div>
     </section>
   );
 };
 
-export default Meow;
+export default ProofofWork;
