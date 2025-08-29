@@ -62,10 +62,8 @@ const ProofofWork = () => {
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-8">
             <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-              PCG
+              The Pussycat dolls
             </span>
-            <br />
-            <span className="text-gray-700 dark:text-gray-300">Community</span>
           </h1>
         </div>
 
