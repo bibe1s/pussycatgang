@@ -104,7 +104,7 @@ const Airdrop = () => {
     <section className="relative min-h-screen flex flex-col overflow-visible bg-orange-400 dark:bg-black pt-16 pb-16 sm:pt-20 sm:pb-20 md:pt-24 md:pb-24">
 
       {/* Curved Loop Top Overlay */}
-      <div className="absolute inset-x-0 top-0 lg:top-7 pointer-events-none z-30 flex items-center justify-center pt-14 sm:pt-16 md:pt-20">
+      <div className="absolute inset-x-0 top-0 lg:top-7 pointer-events-none z-30 flex items-center justify-center pt-14 sm:pt-16 md:pb-26">
         <CurvedLoop 
           marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
           speed={0.35}
@@ -117,7 +117,7 @@ const Airdrop = () => {
       
       
       {/* Main Content - Takes up remaining space */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center p-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center">
         <div className="flex flex-col items-center space-y-8 max-w-4xl w-full border border-gray-700/50 bg-gray-900/50 rounded-lg p-6 shadow-lg min-h-[600px]">
 
           <div> 
@@ -175,10 +175,10 @@ const Airdrop = () => {
       </div>
 
       {/* Curved Loop Bottom Overlay */}
-      <div className="absolute inset-x-0 bottom-0 pointer-events-none z-20 flex items-center justify-center">
+      <div className="absolute inset-x-0 bottom-0 pointer-events-none z-20 flex items-center justify-center pt-12 sm:pt-16 md:pt-24">
         <CurvedLoop 
           marqueeText="ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦ ᓚᘏᗢ ✦"
-          speed={1}
+          speed={0.35}
           curveAmount={0}
           direction="right"
           interactive={true}

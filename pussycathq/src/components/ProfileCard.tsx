@@ -67,7 +67,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   miniAvatarUrl,
   name = "<Name>",
   title = "Software Engineer",
-  handle = "FriedProtatoes",
+  handle = "",
   status = "fcked Up",
   contactText = "Contact",
   showUserInfo = true,
@@ -561,15 +561,17 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   </div>
                 </div>
                   <div className="flex justify-end ml-auto">
-                    <button
-                      className="pc-contact-btn border border-white/10 rounded-lg px-4 py-2 text-sm font-semibold text-white/90 cursor-pointer transition-all duration-200 ease-out backdrop-blur-sm hover:border-white/40 hover:-translate-y-0.5 flex-shrink-0"
-                      onClick={handleContactClick}
-                      style={{ pointerEvents: "auto" }}
-                      type="button"
-                      aria-label={`Contact ${name || "user"}`}
-                    >
-                      {contactText}
-                    </button>
+<button
+  className="pc-contact-btn w-10 h-10 border border-white/10 rounded-full flex items-center justify-center text-white/90 cursor-pointer transition-all duration-200 ease-out backdrop-blur-sm hover:border-white/40 hover:-translate-y-0.5 hover:bg-white/10 flex-shrink-0"
+  onClick={handleContactClick}
+  style={{ pointerEvents: "auto" }}
+  type="button"
+  aria-label={`Contact ${name || "user"} on X/Twitter`}
+>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+  </svg>
+</button>
                   </div>
                 </div>
               </div>
@@ -591,7 +593,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                 {name}
               </h3>
               <p 
-                className="font-semibold relative -top-3 whitespace-nowrap text-base m-0 text-transparent bg-clip-text z-30"
+                className="font-semibold relative -top-5 whitespace-nowrap text-base m-0 text-transparent bg-clip-text z-30"
                 style={{
                   backgroundImage: "linear-gradient(to bottom, #fff, #4a4ac0)",
                   backgroundSize: "1em 1.5em",

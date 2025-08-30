@@ -5,8 +5,9 @@
 import Hero from '@/components/Hero';
 import Airdrop from '@/components/Airdrop';
 import Trading from '@/components/Trading';
-import LetterGlitch from '@/components/LetterGlitch';
 import ProofofWork from '@/components/ProofofWork';
+import Footer from '@/components/Footer';
+
 
 // Main Home page component
 export default function Home() {
@@ -14,12 +15,28 @@ export default function Home() {
     // Main container with full screen height and theme-aware styling
     <main className="min-h-screen text-gray-900 dark:text-white transition-colors duration-300">
       {/* Hero section - responsive and theme-aware */}
-      <Hero />
+      <section id="hero">
+        <Hero />
+      </section>
 
-      <Airdrop />
-      
-      <Trading />
-      <ProofofWork />
+
+      <section id="ProofofWork">
+        <ProofofWork />
+      </section>
+
+      <section id="trading">
+        <Trading />
+      </section>
+
+
+        <section id="airdrop">
+        <Airdrop />
+      </section>
+
+      <Footer />
+
+
+
       {/* Future sections will be added here */}
     </main>
   );

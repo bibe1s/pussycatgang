@@ -1,11 +1,19 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
-import frenzy from '../assets/images/frenzy.svg';
-import eyszi from '../assets/images/eyszi.svg';
-import potato from '../assets/images/potato.svg';
-import yosh from '../assets/images/yosh.svg';
-import ProfileCard from './ProfileCard'
+import { frenzy, eyszi, potato, yosh } from '../assets/images';
+// Import partner SVGs
+import { 
+  onepercent, 
+  redpill, 
+  cryptitaplays, 
+  cryptodegen, 
+  thesafehouse, 
+  web3rizal, 
+  triad, 
+  web3forward, 
+  signcares 
+} from '../assets/images';
 
 import ElectricBorder from './ElectricBorder'; // Import the ElectricBorder component
 
@@ -127,6 +135,19 @@ const Trading = () => {
     }
   ];
 
+  // Partners data with SVG imports
+  const partners = [
+    { name: 'OnePercent', logo: onepercent },
+    { name: 'RedPill', logo: redpill },
+    { name: 'CryptitaPlays', logo: cryptitaplays },
+    { name: 'CryptoDegen', logo: cryptodegen },
+    { name: 'The Safe House', logo: thesafehouse },
+    { name: 'Web3 Rizal', logo: web3rizal },
+    { name: 'Triad', logo: triad },
+    { name: 'Web3 Forward', logo: web3forward },
+    { name: 'SignCares', logo: signcares }
+  ];
+
   const selectedTechnique = tradingTechniques.find(t => t.id === activeTab);
 
   // Handle X link click
@@ -141,14 +162,14 @@ const Trading = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       {/* Trading Techniques Tabs */}
-      <div className="relative z-10 py-16">
+      <div className="relative z-10 py-0 md:py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-7 lg:mb-10">
             Learn Trading Techniques
           </h2>
           
           {/* Technique Tabs with Electric Border on Active Tab */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-7 lg:mb-12">
 
             {tradingTechniques.map((technique) => (
               <div key={technique.id}>
@@ -237,8 +258,6 @@ const Trading = () => {
               </div>
             </ElectricBorder>
           )}
-
-          
         </div>
       </div>
 
@@ -345,126 +364,37 @@ const Trading = () => {
         </div>
       </div>
 
-      {/* Learning Path Section with Electric Borders on Steps */}
-      <div className="relative z-10 py-16 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-16">
-            Your Learning Journey
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <ElectricBorder
-                color="#00BFFF"
-                speed={0.8}
-                chaos={0.4}
-                thickness={2}
-                style={{ borderRadius: '50%', display: 'inline-block' }}
-              >
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
-                  <span className="text-3xl text-white">1️⃣</span>
-                </div>
-              </ElectricBorder>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 mt-6">Foundation</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Build strong fundamentals with basic trading concepts and market psychology
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <ElectricBorder
-                color="#9D4EDD"
-                speed={0.8}
-                chaos={0.5}
-                thickness={3}
-                style={{ borderRadius: '50%', display: 'inline-block' }}
-              >
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                  <span className="text-3xl text-white">2️⃣</span>
-                </div>
-              </ElectricBorder>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 mt-6">Advanced Techniques</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Master Elliott Wave, ICT methodology, and advanced price action analysis
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <ElectricBorder
-                color="#FF6B35"
-                speed={0.8}
-                chaos={0.4}
-                thickness={2}
-                style={{ borderRadius: '50%', display: 'inline-block' }}
-              >
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                  <span className="text-3xl text-white">3️⃣</span>
-                </div>
-              </ElectricBorder>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 mt-6">Mastery</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Combine all techniques for consistent profitable trading strategies
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Partners Section */}
       <div className="relative z-10 py-20 overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Our Partners
+            Our Partnered Communities
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-            We collaborate with leading institutions and experts to provide you with the best trading education
+            We collaborate with various communities to enhance our connection in web3.
           </p>
           
           {/* Marquee Partners Row */}
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
               {/* First set of partners */}
-              <div className="flex space-x-8 min-w-max">
-                {[
-                  { emoji: '', name: '', color: 'from-blue-500 to-cyan-500' },
-                  { emoji: '', name: '', color: 'from-purple-500 to-pink-500' },
-                  { emoji: '', name: '', color: 'from-green-500 to-emerald-500' },
-                  { emoji: '', name: '', color: 'from-orange-500 to-red-500' },
-                  { emoji: '', name: '', color: 'from-indigo-500 to-blue-500' },
-                  { emoji: '', name: '', color: 'from-pink-500 to-rose-500' },
-                  { emoji: '', name: '', color: 'from-yellow-500 to-orange-500' },
-                  { emoji: '', name: '', color: 'from-teal-500 to-cyan-500' }
-                ].map((partner, index) => (
-                  <div key={index} className={`w-32 h-32 bg-gradient-to-br ${partner.color} rounded-2xl p-6 shadow-lg flex items-center justify-center`}>
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">{partner.emoji}</div>
-                      <h3 className="text-white font-semibold text-sm">{partner.name}</h3>
-                    </div>
-                  </div>
+              <div className="flex min-w-max">
+                {partners.map((partner, index) => (
+                  <div key={index} className="w-72 h-72 flex items-center justify-center flex-shrink-0">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={560}
+                      height={560}
+                      className="object-contain max-w-full max-h-full transition-all duration-200 transform hover:scale-110"
+                    />
+                  </div>                  
                 ))}
+
+
+                
               </div>
               
-              {/* Duplicate set for seamless loop */}
-              <div className="flex space-x-8 min-w-max">
-
-                {[
-                  { emoji: '', name: '', color: 'from-blue-500 to-cyan-500' },
-                  { emoji: '', name: '', color: 'from-purple-500 to-pink-500' },
-                  { emoji: '', name: '', color: 'from-green-500 to-emerald-500' },
-                  { emoji: '', name: '', color: 'from-orange-500 to-red-500' },
-                  { emoji: '', name: '', color: 'from-indigo-500 to-blue-500' },
-                  { emoji: '', name: '', color: 'from-pink-500 to-rose-500' },
-                  { emoji: '', name: '', color: 'from-yellow-500 to-orange-500' },
-                  { emoji: '', name: '', color: 'from-teal-500 to-cyan-500' }
-                ].map((partner, index) => (
-                  <div key={index + 8} className={`w-32 h-32 bg-gradient-to-br ${partner.color} rounded-2xl p-6 shadow-lg flex items-center justify-center`}>
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">{partner.emoji}</div>
-                      <h3 className="text-white font-semibold text-sm">{partner.name}</h3>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
