@@ -486,7 +486,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
           position: absolute;
           inset: 0;
           z-index: 1;
-          backdrop-filter: blur(30px);
+
           mask: linear-gradient(to bottom,
               rgba(0, 0, 0, 0) 0%,
               rgba(0, 0, 0, 0) 60%,
