@@ -139,7 +139,7 @@ const CommunityPopup: FC<CommunityPopupProps> = ({ isOpen, onClose }) => {
         <div className="px-6 pb-6">
           <div className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-4">
             <p className="text-sm text-orange-800 dark:text-orange-200 text-center">
-              Don't forget to introduce yourself in our community channels.
+              don&apos;t forget to introduce yourself in our community channels.
             </p>
           </div>
         </div>

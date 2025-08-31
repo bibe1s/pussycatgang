@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import CurvedLoop from './CurvedLoop';
 import Image from 'next/image';
 import puchicat2 from '../assets/images/puchicat2.svg';
@@ -65,26 +65,9 @@ const projects = [
 ];
 
 const Airdrop = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  useEffect(() => {
-    const checkTheme = () => {
-      const htmlElement = document.documentElement;
-      const isDark = htmlElement.classList.contains('dark');
-      setIsDarkMode(isDark);
-    };
-
-    checkTheme();
-    const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (activeFilter === 'all') {

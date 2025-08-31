@@ -4,7 +4,6 @@
 import type { FC } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useTheme } from '@/contexts/ThemeContext';
 import pcgLogo from '../assets/images/pcglogo.svg';
 import DecryptedText from './DecryptedText';

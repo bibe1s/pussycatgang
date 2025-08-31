@@ -3,7 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import pcgLogo from '../assets/images/pcglogo.svg';
 
-import TextType from './TextType';
 import DecryptedText from './DecryptedText';
 
 
