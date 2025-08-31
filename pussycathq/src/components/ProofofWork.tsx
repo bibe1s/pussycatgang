@@ -153,7 +153,7 @@ const ProofofWork = () => {
                 avatarUrl={selectedMember.cleanAvatarUrl?.src || selectedMember.cleanAvatarUrl || selectedMember.avatarUrl.src || selectedMember.avatarUrl}
                 showUserInfo={true}
                 enableTilt={true}
-                enableMobileTilt={true}
+                enableMobileTilt={false}
                 onContactClick={() => {
                   if (selectedMember.twitterUrl) {
                     window.open(selectedMember.twitterUrl, '_blank');
