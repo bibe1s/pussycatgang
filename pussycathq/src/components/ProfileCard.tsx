@@ -69,7 +69,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   title = "Software Engineer",
   handle = "",
   status = "fcked Up",
-  contactText = "Contact",
   showUserInfo = true,
   onContactClick,
 }) => {
@@ -238,15 +237,25 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
-      if (typeof (window.DeviceMotionEvent as any).requestPermission === 'function') {
-        (window.DeviceMotionEvent as any)
-          .requestPermission()
+      
+      // Type-safe device motion permission handling
+      interface DeviceMotionEventWithPermission extends DeviceMotionEvent {
+        requestPermission?: () => Promise<string>;
+      }
+      
+      const DeviceMotionEventTyped = window.DeviceMotionEvent as unknown as {
+        new(): DeviceMotionEventWithPermission;
+        requestPermission?: () => Promise<string>;
+      };
+      
+      if (typeof DeviceMotionEventTyped.requestPermission === 'function') {
+        DeviceMotionEventTyped.requestPermission()
           .then((state: string) => {
             if (state === 'granted') {
               window.addEventListener('deviceorientation', deviceOrientationHandler);
             }
           })
-          .catch((err: any) => console.error(err));
+          .catch((err: Error) => console.error(err));
       } else {
         window.addEventListener('deviceorientation', deviceOrientationHandler);
       }
