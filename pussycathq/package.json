@@ -2,6 +2,7 @@
   "name": "pussycathq",
   "version": "0.1.0",
   "private": true,
+    "npmrc": "--legacy-peer-deps",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
