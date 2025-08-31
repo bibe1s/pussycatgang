@@ -61,8 +61,6 @@ const Hero = () => {
               </span>
             </h1>
 
-           
-
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start">
               <button className="group relative overflow-hidden bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">

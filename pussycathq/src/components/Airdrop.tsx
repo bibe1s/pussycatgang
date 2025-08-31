@@ -9,56 +9,56 @@ const projects = [
   {
     id: 1,
     name: "Aster",
-    logo: "🌟",
+    // logo: "🌟",
     category: "featured",
     bgColor: "bg-green-600"
   },
   {
     id: 2,
     name: "Backpack",
-    logo: "🎒",
+    // logo: "🎒",
     category: "all",
     bgColor: "bg-red-600"
   },
   {
     id: 3,
     name: "Pharos",
-    logo: "⚡",
+    // logo: "⚡",
     category: "topChoice",
     bgColor: "bg-blue-600"
   },
   {
     id: 4,
     name: "Chakra",
-    logo: "✖️",
+    // logo: "✖️",
     category: "featured",
     bgColor: "bg-gray-800"
   },
   {
     id: 5,
     name: "Gradient Network",
-    logo: "🔗",
+    // logo: "🔗",
     category: "featured",
     bgColor: "bg-purple-600"
   },
   {
     id: 6,
     name: "Grass Protocol",
-    logo: "🌿",
+    // logo: "🌿",
     category: "topChoice",
     bgColor: "bg-green-500"
   },
   {
     id: 7,
     name: "Example Project",
-    logo: "💎",
+    // logo: "💎",
     category: "all",
     bgColor: "bg-indigo-600"
   },
   {
     id: 8,
     name: "Demo App",
-    logo: "🚀",
+   // logo: "🚀",
     category: "topChoice",
     bgColor: "bg-pink-600"
   }
@@ -138,7 +138,7 @@ const Airdrop = () => {
             >
               <div className="relative group flex flex-col items-center justify-center text-center space-y-3 h-full p-4">
                 <div className="text-3xl sm:text-4xl transform group-hover:scale-110 transition-transform duration-300">
-                  {project.logo}
+                  {/* {project.logo} */}
                 </div>
                 <h3 className="text-white font-bold text-sm sm:text-base leading-tight">
                   {project.name}

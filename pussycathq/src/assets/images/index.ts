@@ -21,7 +21,8 @@ import senorfroggy from "./senorfroggy.svg";
 import shobe from "./shobe.svg";
 import yosh from "./yosh.svg";
 import nicklay from "./nicklay.svg";
-import asta from "./asta.svg"
+import asta from "./asta.svg";
+import friedprotato from "./friedprotato.svg";
 
 import tpBxie from "./tp-bxie.svg";
 import tpCasterr from "./tp-casterr.svg";
@@ -46,7 +47,7 @@ import tpShobe from "./tp-shobe.svg";
 import tpYosh from "./tp-yosh.svg";
 import tpNicklay from "./tp-nicklay.svg";
 import tpAsta from "./tp-asta.svg";
-import pcglogo from "./pcglogo.svg";
+import tpFriedprotato from "./tp-friedprotato.svg";
 
 import onepercent from "./onepercent.svg";
 import redpill from "./redpill.svg";
@@ -59,6 +60,7 @@ import web3forward from "./web3forward.svg";
 import signcares from "./signcaresinitiative.svg"
 
 import okx1 from "./okx1.svg"
+import pcglogo from "./pcglogo.svg";
 
 export {
   bxie,
@@ -85,7 +87,8 @@ export {
   yosh,
   nicklay,
   asta,
-  pcglogo,
+  friedprotato,
+
 
   tpBxie,
   tpCasterr,
@@ -110,6 +113,7 @@ export {
   tpYosh,
   tpNicklay,
   tpAsta,
+  tpFriedprotato,
 
   onepercent,
   redpill,
@@ -122,4 +126,5 @@ export {
   signcares,
 
   okx1,
+  pcglogo
 };

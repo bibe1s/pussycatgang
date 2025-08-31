@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ProfileCard from './ProfileCard';
 
-import { okx1, bxie, casterr, dooseeh, empress, eyah, eyszi, frenzy, gaia, hanz, hinode, jax, jaypee, jigsaw, kei, kesha, lamce, maying, senorfroggy, shobe, yosh, jrsolis, potato, nicklay, asta, tpBxie, tpCasterr, tpDooseeh, tpEmpress, tpEyah, tpEyszi, tpFrenzy, tpGaia, tpHanz, tpHinode, tpJax, tpJaypee, tpJigsaw, tpKei, tpKesha, tpLamce, tpMaying, tpSenorfroggy, tpShobe, tpYosh, tpPotato, tpNicklay, tpAsta, pcglogo } from "../assets/images";
+import { okx1, bxie, casterr, dooseeh, empress, eyah, eyszi, frenzy, gaia, hanz, hinode, jax, jaypee, jigsaw, kei, kesha, lamce, maying, senorfroggy, shobe, yosh, friedprotato, potato, nicklay, asta, tpBxie, tpCasterr, tpDooseeh, tpEmpress, tpEyah, tpEyszi, tpFrenzy, tpGaia, tpHanz, tpHinode, tpJax, tpJaypee, tpJigsaw, tpKei, tpKesha, tpLamce, tpMaying, tpSenorfroggy, tpShobe, tpYosh, tpPotato, tpNicklay, tpAsta, pcglogo, tpFriedprotato, } from "../assets/images";
 
 // Enhanced member data structure
 const membersData = {
@@ -16,7 +16,7 @@ const membersData = {
   17: { name: "EMPRESS", title: "Project Leader", handle: "empress", status: "Online", avatarUrl: empress, cleanAvatarUrl: tpEmpress, bio: "Ruling with wisdom", twitterUrl: "https://x.com/0oEmpresso0" },
   18: { name: "EYAH", title: "Visual Artist", handle: "eyah", status: "Online", avatarUrl: eyah, cleanAvatarUrl: tpEyah, bio: "Painting digital dreams", twitterUrl: "https://x.com/eyahreigns20" },
   19: { name: "EYSZI", title: "Airdrop Hunter / Trader", handle: "eyszi", status: "Online", avatarUrl: eyszi, cleanAvatarUrl: tpEyszi, bio: "Numbers tell stories", twitterUrl: "https://x.com/Ox_eyyss" },
-  20: { name: "JR SOLIS", title: "BUMABATAK NG SHABU", handle: "jrsolis", status: "Online", avatarUrl: jrsolis, cleanAvatarUrl: jrsolis, bio: "KAPE KAPE KAPE KAPE KAPE KAPE KAPE", twitterUrl: "https://twitter.com/FriedProtatoes" },
+  20: { name: "FRIEDPROTATO", title: "Visual Arts Enthusiast", handle: "FriedProtato", status: "Online", avatarUrl: friedprotato, cleanAvatarUrl: tpFriedprotato, bio: "KAPE KAPE KAPE KAPE KAPE KAPE KAPE", twitterUrl: "https://twitter.com/FriedProtatoes" },
   21: { name: "JAX", title: "Music Artist", handle: "jax", status: "Online", avatarUrl: jax, cleanAvatarUrl: tpJax, bio: "Keeping things secure", twitterUrl: "https://twitter.com/adcwithjax" },
   22: { name: "JAYPEE", title: "Supreme Software Engineer", handle: "jaypee", status: "Online", avatarUrl: jaypee, cleanAvatarUrl: tpJaypee, bio: "Spreading the word", twitterUrl: "https://twitter.com/BLANK11011" },
   25: { name: "DOOSEEH", title: "Airdrop Hunter | Yapper", handle: "dooseeh", status: "Online", avatarUrl: dooseeh, cleanAvatarUrl: tpDooseeh, bio: "User experience champion", twitterUrl: "https://x.com/dondiiieeee" },
@@ -39,13 +39,13 @@ const proofImages = [
     id: 1,
     src: okx1,
     title: "OKX SmashFi Trophy",
-    description: "3D Printer Trophy",
+    description: "3D Printer Trophy made by Hinode",
     alt: "Community Growth Proof"
   },
   {
     id: 2,
     src: okx1,
-    title: "Innovation & Development",
+    title: "Kaito Top Leaderboard",
     description: "Cutting-edge solutions for tomorrow",
     alt: "Innovation Proof"
   },
