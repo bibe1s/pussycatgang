@@ -151,7 +151,7 @@ const Trading = () => {
   const selectedTechnique = tradingTechniques.find(t => t.id === activeTab);
 
   // Handle X link click
-  const handleXLinkClick = (e, xLink) => {
+const handleXLinkClick = (e: React.MouseEvent, xLink: string) => {
     e.stopPropagation(); // Prevent triggering the card selection
     window.open(xLink, '_blank', 'noopener,noreferrer');
   };
